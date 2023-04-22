@@ -1,0 +1,1 @@
+# so, i'm going to create chat app use firebase and feature-sliced
