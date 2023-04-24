@@ -1,1 +1,1 @@
-# so, i'm going to create chat app use firebase and feature-sliced
+# so, i'm going to create chat app use firebase and  architectural methodology for frontend projects looks like feature-sliced(but that’s not it)

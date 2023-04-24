@@ -1,5 +1,5 @@
 import { FC } from 'react';
 
-export const Main: FC = () => {
+export const MainPage: FC = () => {
   return <div>main page</div>;
 };
