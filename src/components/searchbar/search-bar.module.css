@@ -1,0 +1,21 @@
+.searchBar {
+  width: 100%;
+}
+.searchForm {
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+}
+.searchForm input {
+  outline: transparent;
+  border: transparent;
+  background-color: transparent;
+  height: 34px;
+  width: 100%;
+  color: #f4f4f4;
+  padding: 4px 12px;
+  border-bottom: 1px solid #f4f4f4a2;
+}
+.searchForm input::placeholder {
+  color: #f4f4f4;
+}

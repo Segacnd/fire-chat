@@ -1,0 +1,32 @@
+.input {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 12px;
+}
+.input img{
+    width: 16px;
+    height: 16px;
+}
+.input input {
+  border: transparent;
+  outline: transparent;
+  height: 100%;
+  font-size: 18px;
+  width: 100%;
+}
+.rightSide {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.rightSide button{
+    border: transparent;
+    outline: transparent;
+    padding: 10px 14px;
+    color: #f4f4f4;
+    background-color: #8da4f1;
+}

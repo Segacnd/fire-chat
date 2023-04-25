@@ -8,8 +8,9 @@ export const SignInForm: FC = () => {
       <h3>Authorization</h3>
       <input type='text' placeholder='email' />
       <input type='text' placeholder='password' />
+      <button type='submit'>Sign in</button>
       <p>
-        You do have an account? <Link to='/registration'>Login</Link>
+        You dont have an account? <br /> <Link to='/registration'>Registration</Link>
       </p>
     </form>
   );

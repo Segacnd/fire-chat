@@ -1,22 +1,44 @@
-.form{
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  line-height: 1.2;
 }
 
-.form h3{
-    font-size: 16px;
-    font-weight: 300;
-    text-align: center;
+.form h3 {
+  font-size: 16px;
+  font-weight: 300;
+  text-align: center;
 }
 
-.form input{
-    border: transparent;
-    background-color: transparent;
-    border-bottom: 1px solid #272727;
-    font-size: 12px;
+.form input {
+  border: transparent;
+  background-color: transparent;
+  border-bottom: 1px solid #272727;
+  font-size: 16px;
+  font-weight: 100;
+  padding: 6px 8px;
+  width: 320px;
+}
+
+.form .uploadImage {
+  border: transparent;
+}
+
+.form button {
+  height: 40px;
+  outline: transparent;
+  background-color: transparent;
+  border-radius: 8px;
+  border: 1px solid #272727;
+  cursor: pointer;
+}
+.form p{
+    font-size: 14px;
     font-weight: 100;
-    padding: 6px 8px;
-    
+}
+.form a{
+    color: #272727;
+    font-size: 16px;
+    font-weight: 500;
 }
