@@ -8,8 +8,7 @@ export const Layout: FC = () => {
   const { isAuth } = useAuth();
   useEffect(() => {
     if (!isAuth) {
-      console.log('!auth');
-      // navigate('/auth');
+      navigate('/signin');
     }
   }, [isAuth, navigate]);
   return (

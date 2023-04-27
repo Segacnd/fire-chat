@@ -16,30 +16,26 @@ export const RegistrationForm: FC = () => {
       email: '',
       password: '',
     },
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
       try {
-        createUserWithEmailAndPassword(auth, values.email, values.password).then((data) => {
-          const { user } = data;
+        const res = await createUserWithEmailAndPassword(auth, values.email, values.password);
+        console.log('after res - ', res);
+        const storageRef = ref(storage, values.login);
+        const uploadTask = uploadBytesResumable(storageRef, avatar);
 
-          const storageRef = ref(storage, values.login);
-          const uploadTask = uploadBytesResumable(storageRef, avatar);
-
-          uploadTask.on('state_changed', () => {
-            getDownloadURL(uploadTask.snapshot.ref).then(async (downloadUrl) => {
-              await updateProfile(user, {
-                displayName: values.login,
-                photoURL: downloadUrl,
-              });
-              await setDoc(doc(db, 'users', user.uid), {
-                uid: user.uid,
-                login: values.login,
-                email: values.email,
-                avatar: downloadUrl,
-              });
-              await setDoc(doc(db, 'userChats', user.uid), {});
-              navigate('/auth');
-            });
+        getDownloadURL((await (await uploadTask).task).ref).then(async (downloadUrl) => {
+          await updateProfile(res.user, {
+            displayName: values.login,
+            photoURL: downloadUrl,
           });
+          await setDoc(doc(db, 'users', res.user.uid), {
+            uid: res.user.uid,
+            login: values.login,
+            email: values.email,
+            avatar: downloadUrl,
+          });
+          await setDoc(doc(db, 'userChats', res.user.uid), {});
+          navigate('/signin');
         });
       } catch (err) {
         console.log(err);

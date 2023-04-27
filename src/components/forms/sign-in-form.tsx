@@ -16,13 +16,20 @@ export const SignInForm: FC = () => {
     },
     onSubmit: (values) => {
       signInWithEmailAndPassword(auth, values.email, values.password).then(({ user }) => {
-        dispatch(userActions.setUser({ email: user.email, id: user.uid, token: user.refreshToken }));
-        console.log(user);
+        dispatch(
+          userActions.setUser({
+            email: user.email,
+            id: user.uid,
+            token: user.refreshToken,
+            avatar: user.photoURL,
+            userName: user.displayName,
+          })
+        );
       });
     },
   });
   return (
-    <form action='' className={styles.form}>
+    <form action='' onSubmit={formik.handleSubmit} className={styles.form}>
       <h3>Authorization</h3>
       <input
         type='text'
